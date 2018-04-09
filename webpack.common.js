@@ -5,10 +5,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const copy = new CopyWebpackPlugin(
   [
-    // {
-    //   from: `./src/assets`,
-    //   to: `./assets`,
-    // },
+    {
+      from: `./src/assets`,
+      to: `./assets`,
+    },
     {
       from: `./src/**.html`,
       to: `./`,
@@ -48,6 +48,10 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.html$/,

@@ -4,9 +4,9 @@ import { inject, observer } from 'mobx-react';
 class Home extends Component {
     render() {
         return (
-            <div>
+            <h1>
                 {this.props.name}
-            </div>
+            </h1>
         );
     }
 }

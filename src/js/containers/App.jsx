@@ -5,6 +5,8 @@ import { string } from 'prop-types';
 import DevTools from 'mobx-react-devtools';
 import { inject, observer, PropTypes } from 'mobx-react';
 
+import css from '../../css/style';
+
 import Home from './home';
 
 export default class App extends Component {
