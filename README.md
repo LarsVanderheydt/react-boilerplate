@@ -1,4 +1,4 @@
-# A react boilerplate with export default
+# A react boilerplate with Webpack and React Router
 > To get all my projects at home started i'm using this boilerplate
 > build on top of my other [boilerplate](https://github.com/LarsVanderheydt/webpack-boilerplate)
 
@@ -16,6 +16,8 @@
 - react-router
 - jsx support
 - hot module reloading
+
+> No server setup, this boilerplate makes use of the HashRouter.
 
 ```
 yarn start
