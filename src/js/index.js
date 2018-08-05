@@ -1,21 +1,19 @@
 /* eslint-disable react/jsx-filename-extension */
 
 import React from 'react';
-import { render } from 'react-dom';
+import { hydrate } from 'react-dom';
 import App from './containers/App';
 
 import store from './store/';
 import { Provider } from 'mobx-react';
 
 const init = () => {
-
-  render(
+  hydrate(
     <Provider store={store}>
       <App />
     </Provider>,
-    document.querySelector(`#app`)
+    document.querySelector(`#app`),
   );
-
 };
 
 init();

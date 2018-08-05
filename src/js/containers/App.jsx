@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, HashRouter, Switch, Redirect } from 'react-router-dom';
+import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import { string } from 'prop-types';
 
 import DevTools from 'mobx-react-devtools';
@@ -19,12 +19,12 @@ export default class App extends Component {
       <section>
         {process.env.NODE_ENV !== `production` ? <DevTools /> : null}
 
-        <HashRouter>
+        <BrowserRouter>
           <Switch>
             <Route exact path="/home" render={this.renderHome} />
             <Route render={() => <Redirect to="/home" />} />
           </Switch>
-        </HashRouter>
+        </BrowserRouter>
       </section>
     );
   }

@@ -25,11 +25,11 @@ module.exports = {
 
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'server/dist'),
   },
 
   resolve: {
-    extensions: ['*', '.js', '.jsx', `.css`]
+    extensions: ['*', '.js', '.jsx', `.css`],
   },
 
   module: {
@@ -51,7 +51,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 },
+          },
+          'postcss-loader',
+        ],
       },
       {
         test: /\.html$/,
@@ -63,5 +70,5 @@ module.exports = {
     ],
   },
 
-  plugins: [copy, new CleanWebpackPlugin(['dist'])],
+  plugins: [copy, new CleanWebpackPlugin(['server/dist'])],
 };
