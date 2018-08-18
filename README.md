@@ -4,18 +4,17 @@
 
 ### Has following features
 - Minified with Uglifyjs-webpack-plugin
-- Babel integration with babel-preset-env
-- Hot reloading with webpack-dev-server
+- Babel integration
+- Hot reloading with webpack
 - ESLint for javascript linting
-- Cleaning dist map with CleanWebpackPlugin
-- Copy html & assets with CopyWebpackPlugin
-- Html loader
+- Server side rendering to build api's on
+- Starting file for api your routes
+- Routes are automatic loaded (all files in routes/api/ are loaded as routes)
+- With chalk the routes are logged in fancy ways
 
 ### react includes
 - mobx
 - react-router
-- jsx support
-- hot module reloading
 
 > No server setup, this boilerplate makes use of the HashRouter.
 
