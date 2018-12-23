@@ -1,8 +1,0 @@
-@import './reset';
-@import './vars';
-
-h1::after {
-    content: 'style check';
-    display: block;
-    color: var(--green);
-}

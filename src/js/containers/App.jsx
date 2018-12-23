@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
-import { string } from 'prop-types';
-
 import DevTools from 'mobx-react-devtools';
-import { inject, observer, PropTypes } from 'mobx-react';
-
-import css from '../../css/style';
-
+import "../../css/style.scss";
 import Home from './home';
+import Navigation from './Navigation';
 
 export default class App extends Component {
   renderHome() {
@@ -16,8 +12,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <section>
+      <section className="container">
         {process.env.NODE_ENV !== `production` ? <DevTools /> : null}
+
 
         <BrowserRouter>
           <Switch>

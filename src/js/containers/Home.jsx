@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+import Navigation from './Navigation';
 
 class Home extends Component {
     render() {
         return (
-            <h1>
-                {this.props.name}
-            </h1>
+            <div>
+                <Navigation />
+                <h1>Homepage content h1</h1>
+            </div>
         );
     }
 }
