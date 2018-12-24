@@ -1,0 +1,16 @@
+.main_menu {
+  display: flex;
+
+  .menu__item {
+    padding: 1rem 1.5rem;
+    background-color: $primary;
+    transition: all .5s ease;
+    color: $secondary;
+  
+    &:hover {
+      background-color: $secondary;
+      color: $primary;
+      transition: all .5s ease;
+    }
+  }
+}

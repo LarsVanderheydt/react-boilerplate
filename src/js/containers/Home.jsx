@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import Navigation from './Navigation';
+import Layout from '../components/Layout';
 
 class Home extends Component {
     render() {
         return (
-            <div>
-                <Navigation />
-                <h1>Homepage content h1</h1>
-            </div>
+            <Layout>
+                <div className="container">
+                    <h1>Hello world</h1>
+                </div>
+            </Layout>
         );
     }
 }

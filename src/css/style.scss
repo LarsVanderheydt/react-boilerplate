@@ -4,3 +4,11 @@
 @import './mixins/_iconize';
 
 @import './partials/_base';
+@import './partials/_layout';
+
+@import './partials/regions/_header';
+@import './partials/regions/_footer';
+
+@import './partials/components/_navigation';
+
+@import './partials/_statefull';
