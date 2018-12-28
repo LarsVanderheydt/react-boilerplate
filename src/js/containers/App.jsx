@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
-import DevTools from 'mobx-react-devtools';
 import "../../css/style.scss";
 import Home from './home';
 import Contact from './Contact';
 
 
 export default class App extends Component {
-
+  componentDidMount() {
+    fetch('/api/example').then(d => d.json())
+    .then(data => console.log(data));
+  }
 
   render() {
     return (
       <React.Fragment>
-
-
         <BrowserRouter>
           <Switch>
             <Route exact path="/home" component={Home} />

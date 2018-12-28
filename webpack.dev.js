@@ -6,12 +6,12 @@ module.exports = merge(common, {
   entry: './src/js/index.js',
   devtool: 'inline-source-map',
 
-  // devServer: {
-  //   contentBase: `./dist`,
-  //   historyApiFallback: true, // for use with client side router
-  //   hot: true,
-  //   port: 3000
-  // },
+  devServer: {
+    contentBase: `./dist`,
+    historyApiFallback: true, // for use with client side router
+    hot: true,
+    port: 3000
+  },
 
   plugins: [
     new HotModuleReplacementPlugin()

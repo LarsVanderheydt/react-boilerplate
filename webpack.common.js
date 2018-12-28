@@ -3,6 +3,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const dist = "dist";
+
 const copy = new CopyWebpackPlugin(
   [
     {
@@ -25,7 +27,7 @@ module.exports = {
 
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, 'server/dist'),
+    path: path.resolve(__dirname, dist),
   },
 
   resolve: {
@@ -67,7 +69,7 @@ module.exports = {
     ],
   },
 
-  plugins: [copy, new CleanWebpackPlugin(['server/dist']), new MiniCssExtractPlugin({
+  plugins: [copy, new CleanWebpackPlugin([dist]), new MiniCssExtractPlugin({
     filename: "css/style.css"
   })],
 };
