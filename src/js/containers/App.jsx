@@ -3,14 +3,10 @@ import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import "../../css/style.scss";
 import Home from './home';
 import Contact from './Contact';
-
+import Login from './Login';
+import User from '../components/User';
 
 export default class App extends Component {
-  componentDidMount() {
-    fetch('/api/example').then(d => d.json())
-    .then(data => console.log(data));
-  }
-
   render() {
     return (
       <React.Fragment>
@@ -18,6 +14,8 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/home" component={Home} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/user/:id" component={User} />
 
             <Route render={() => <Redirect to="/home" />} />
           </Switch>

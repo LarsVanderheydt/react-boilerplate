@@ -4,19 +4,36 @@ import {
     action
 } from 'mobx';
 
+import UsersAPI from '../lib/api/users';
+import User from '../Models/User';
+
 class Store {
     @observable
-    name = "welcome to the react boilerplate home page"
+    users = [];
 
     @observable
-    main_menu = [
-        {
-            "label": "home",
-        },
-        {
-            "label": "contact"
-        }
-    ]
+    page = "homepage"
+
+    @observable
+    user = [];
+
+    constructor() {
+        UsersAPI.read()
+            .then(d => this._addUser(...d));
+    }
+
+    @action
+    _addUser = (...users) => {
+        users.forEach(user => {
+            this.users.push(
+                new User(user)
+            );
+        });
+    }
+
+    getUser = id => {
+        return this.users.find(a => a.id === parseInt(id));
+    }
 }
 
 
