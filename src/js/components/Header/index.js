@@ -13,10 +13,6 @@ class BreadcrumbClass {
   }
 }
 
-
-
-
-
 export default class Header extends Component {
   render() {
     const breadcrumb = new BreadcrumbClass(this.props.breadcrumb);
