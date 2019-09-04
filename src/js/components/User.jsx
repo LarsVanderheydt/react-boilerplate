@@ -9,7 +9,12 @@ const User = ({ match, getUser }) => {
   const user = getUser(id);
   
   return !user ? <Loading /> : (
-    <Layout>
+    <Layout breadcrumb={{
+      pathname: [
+        { label: 'users', link: 'users' },
+        { label: user.name }
+      ]
+    }}>
       <p>{user.name}</p>
     </Layout>
   );

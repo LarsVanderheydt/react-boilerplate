@@ -5,6 +5,7 @@ import Home from './home';
 import Contact from './Contact';
 import Login from './Login';
 import User from '../components/User';
+import Users from './Users';
 
 export default class App extends Component {
   render() {
@@ -15,6 +16,7 @@ export default class App extends Component {
             <Route exact path="/home" component={Home} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/users" component={Users} />
             <Route exact path="/user/:id" component={User} />
 
             <Route render={() => <Redirect to="/home" />} />

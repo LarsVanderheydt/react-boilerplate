@@ -1,20 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import Layout from '../components/Layout';
 import Loading from '../components/Loading';
 
 class Home extends Component {
-    state = {
-        users: []
-    }
-
-    componentDidMount() {
-        let { users } = this.state;
-        users = this.props.users;
-        this.setState({ users });
-    }
-
     render() {
         const { users } = this.state;
 
@@ -41,9 +30,7 @@ class Home extends Component {
 export default inject(
     ({ store }) => {
         return ({
-            page: store.page,
-            fetchUsers: store.fetchUsers,
-            users: store.users
+            page: store.page
         });
     }
 )(
