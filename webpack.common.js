@@ -3,7 +3,16 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const dist = "dist";
+const hasAPI = false;
+
+let dir = "";
+
+if (hasAPI) {
+  dir = 'server/public'
+} else {
+  dir = 'dist'
+}
+
 
 const copy = new CopyWebpackPlugin(
   [
@@ -27,7 +36,7 @@ module.exports = {
 
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, dist),
+    path: path.resolve(__dirname, dir),
   },
 
   resolve: {
@@ -69,7 +78,7 @@ module.exports = {
     ],
   },
 
-  plugins: [copy, new CleanWebpackPlugin([dist]), new MiniCssExtractPlugin({
+  plugins: [copy, new CleanWebpackPlugin([dir]), new MiniCssExtractPlugin({
     filename: "css/style.css"
   })],
 };
